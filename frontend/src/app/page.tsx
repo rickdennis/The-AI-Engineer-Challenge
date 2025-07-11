@@ -44,8 +44,12 @@ export default function Home() {
           setResponse((prev) => prev + chunk);
         }
       }
-    } catch (err: any) {
-      setResponse("Error: " + err.message);
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setResponse("Error: " + err.message);
+      } else {
+        setResponse("An unknown error occurred.");
+      }
     } finally {
       setLoading(false);
     }
