@@ -17,7 +17,7 @@ export default function Home() {
     "gpt-3.5-turbo"
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setResponse("");
     setLoading(true);
@@ -152,7 +152,7 @@ export default function Home() {
                   className="devmsg-tooltip"
                   role="tooltip"
                 >
-                  The developer message (also called system prompt) is a special instruction for the AI model. Use it to set behavior, context, or constraints for the conversation. For example: "You are a helpful assistant." or "Only answer in JSON."
+                  The developer message (also called system prompt) is a special instruction for the AI model. Use it to set behavior, context, or constraints for the conversation. For example: &quot;You are a helpful assistant.&quot; or &quot;Only answer in JSON.&quot;
                 </span>
                 <style>{`
                   label span[aria-label]::after { display: none; }
